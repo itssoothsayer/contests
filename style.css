@@ -1,0 +1,54 @@
+/* CSS styles for the page */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.counter-container {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 20px;
+    width: 500px;
+    text-align: left;
+}
+
+#counter-display {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: black;
+}
+
+#increment-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#decrement-btn {
+    background-color: #2f2e32;
+    color: red;
+}
+
+#clear-btn {
+    background-color: white;
+}
+
+#error-msg {
+    display: none;
+    color: red;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
