@@ -1,34 +1,65 @@
-const counterElement = document.getElementById('counter-display');
-const decrementButton = document.getElementById('decrement-btn');
-const incrementButton = document.getElementById('increment-btn');
-const clearButton = document.getElementById('clear-btn');
-const errorElement = document.getElementById('error-msg');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const errorMessage = document.querySelectorAll('.error-message');
+const successMessage = document.querySelector('.success-message');
+const form = document.getElementById('signup-form');
+const submitButton = form.querySelector('button[type="submit"]');
 
-let count = 0;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const passwordRegex = /^.{8,}$/;
 
-function updateCounter() {
-    counterElement.textContent = `Your current count is: ${count}`; // Update directly
-    clearButton.style.display = count > 0 ? 'inline-block' : 'none';
-    errorElement.style.display = count === 0 ? 'block' : 'none';
-    decrementButton.disabled = count === 0;
-    decrementButton.style.filter = count === 0 ? 'grayscale(100%)' : 'none'; // Gray out decrement button
+function validateForm() {
+    return emailRegex.test(emailInput.value) && passwordRegex.test(passwordInput.value);
 }
 
-updateCounter();  // Initial update
 
-incrementButton.addEventListener('click', () => {
-    count++;
-    updateCounter();
-});
+submitButton.disabled = !validateForm();
 
-decrementButton.addEventListener('click', () => {
-    if (count > 0) {
-        count--;
+emailInput.addEventListener('change', (event) => {
+    const emailValue = event.target.value;
+    if (emailValue.length > 3 && emailRegex.test(emailValue)) {
+        errorMessage[0].style.display = 'none';
+        emailInput.style.color = 'black';
+    } else {
+        errorMessage[0].style.display = 'block';
+        errorMessage[0].textContent = 'Please enter a valid email address.';
+        emailInput.style.color = 'red';
     }
-    updateCounter();
+    submitButton.disabled = !validateForm();
 });
 
-clearButton.addEventListener('click', () => {
-    count = 0;
-    updateCounter();
+passwordInput.addEventListener('change', (event) => {
+    const passwordValue = event.target.value;
+    if (passwordRegex.test(passwordValue)) {
+        errorMessage[1].style.display = 'none';
+        passwordInput.style.color = 'black';
+    } else {
+        errorMessage[1].style.display = 'block';
+        errorMessage[1].textContent = 'Password must be at least 8 characters long.';
+        passwordInput.style.color = 'red';
+    }
+    submitButton.disabled = !validateForm();
+});
+
+
+emailInput.addEventListener('focus', () => {
+    emailInput.style.color = 'black';
+});
+
+passwordInput.addEventListener('focus', () => {
+    passwordInput.style.color = 'black';
+});
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (validateForm()) {
+        successMessage.style.display = 'block';
+        form.reset();
+        setTimeout(() => {
+            successMessage.style.display = 'none';
+        }, 3000);
+    } else {
+        alert('Please fix the errors in the form.');
+    }
 });
