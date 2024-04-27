@@ -1,54 +1,66 @@
-
 body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: black;
-    color: white;
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
 }
 
-.counter-container {
-    border: 1px solid white;
+.container {
+    width: 400px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    padding: 30px;
     border-radius: 5px;
-    padding: 20px;
-    width: 500px;
-    text-align: left;
-}
-
-#counter-display {
-    font-size: 17px;
-    margin-bottom: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    color: black;
-}
-
-#increment-btn {
-    background-color: #4CAF50;
-    color: white;
-}
-
-#decrement-btn {
-    background-color: #2f2e32;
-    color: red;
-}
-
-#clear-btn {
     background-color: white;
 }
 
-#error-msg {
-    display: none;
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #ccc;
+
+}
+
+.error-message {
     color: red;
-    font-size: 0.8em;
-    margin-bottom: 10px;
+    font-size: 0.8rem;
+    display: none;
+}
+
+.success-message {
+    color: green;
+    font-size: 0.8rem;
+    display: none;
+}
+
+button[type="submit"] {
+    background-color: #0095ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
