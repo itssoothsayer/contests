@@ -4,49 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Data Table</title>
+    <title>Counter App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <div class="container">
-        <h1>Student Data Table</h1>
-        <input type="text" id="search" placeholder="Search by Name or Email">
-        <div class="button-container">
-            <!-- <button id="sort-name-asc">Sort by Name A->Z</button>
-            <button id="sort-name-desc">Sort by Name Z->A</button> -->
-            <button id="sort-name-asc">
-                <div>Sort by Name</div>
-                <div> (A -> Z)</div>
-            </button>
-            <button id="sort-name-desc">
-                <div>Sort by Name</div>
-                <div> (Z -> A)</div>
-            </button>
-            <button id="sort-marks-asc">Sort by Marks (Ascending)</button>
-            <button id="sort-passing">Show Passing Students</button>
-            <button id="sort-class">Sort by Class</button>
-            <button id="sort-gender">Sort by Gender</button>
-        </div>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Marks</th>
-                        <th>Passing</th>
-                        <th>Gender</th>
-                        <th>Class</th>
-                    </tr>
-                </thead>
-                <tbody id="student-data">
-                </tbody>
-            </table>
-        </div>
+<body class="dark-mode">
+    <button id="dark-mode-toggle"><i class="icon"></i> Toggle Mode</button>
+    <div class="counter-container">
+        <h1>Counter Using HTML</h1>
+        <div id="counter-display">Your current count is: <span id="count-value">0</span></div>
+        <div class="divider"></div>
+        <button id="increment-btn"><b>Increment</b></button>
+        <button id="decrement-btn"><b>Decrement</b></button>
+        <button id="clear-btn" style="display: none;"><b>Clear</b></button>
+        <p id="error-msg"></p>
     </div>
+
     <script src="script.js"></script>
 </body>
 
+</html>
+</html>
+</html>
 </html>

@@ -1,57 +1,138 @@
 body {
-    font-family: sans-serif;
-}
-
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
+    background-color: #f0f8ff;
+    color: #003366;
+    font-family: 'JetBrains Mono', monospace;
     padding: 20px;
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#search {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.button-container {
+    margin: 0;
+    box-sizing: border-box;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.counter-container {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    width: 500px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .counter-container {
+    border-color: white;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+#counter-display {
+    font-size: 17px;
+    margin-bottom: 10px;
 }
 
 button {
-    background-color: black;
-    color: aliceblue;
-    padding: 10px 7px;
-    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    background-color: #4CAF50;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'JetBrains Mono', monospace;
 }
 
-.table-container {
-    overflow-x: auto;
+#increment-btn {
+    background-color: #4CAF50;
+    color: white;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+#decrement-btn {
+    background-color: #ff6347;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-th,
-td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-th {
+#clear-btn {
     background-color: #f2f2f2;
+    color: #333;
 }
+
+#error-msg {
+    display: none;
+    color: #FF6347;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
+
+#dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dark-mode-toggle i {
+    margin-right: 8px;
+}
+
+.dark-mode #dark-mode-toggle {
+    background-color: #fff;
+    color: #222;
+}
+
+@media (max-width: 600px) {
+    button {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+
+    #counter-display {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #counter-display {
+        font-size: 22px;
+    }
+}
+
+.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+.dark-mode button {
+    background-color: #555;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
