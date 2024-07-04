@@ -1,0 +1,44 @@
+.App {
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: #ddd;
+  margin: auto;
+  padding: auto;
+}
+
+input[type="text"], button {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="text"] {
+  width: 70%; 
+  margin: 10px 0;
+  padding: 10px;
+}
+
+button {
+  width: fit-content; 
+  background-color: #4CAF50; 
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049; 
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  border-bottom: 0.5px solid #ddd;
+  padding: 18px;
+  text-align: left;
+}
